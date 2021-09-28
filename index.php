@@ -1,2 +1,2 @@
 <?php
-"Hellow World";
+"Hello World";
