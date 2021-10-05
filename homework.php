@@ -80,5 +80,3 @@ var_dump($str1 > $str2); //true (125 * 13 + 7 больше чем 223 + 28 * 2 )
 var_dump($str2 > $str1); //false
  ?>
 
-
-
