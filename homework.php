@@ -45,7 +45,7 @@ echo mb_convert_case($string, MB_CASE_TITLE, 'UTF-8'); //Десять Негри
 <?php
 // Длинна строки
 $string = 'Десять негритят пошли купаться в море';
-echo strlen ($string); //69 (32 буквы * 2 + 5 пробелов)
+echo mb_strlen ($string); // 37 ( 32 буквы + 5 пробелов )
 ?>
 <br>
 Действия с логическими значениями:
@@ -66,10 +66,11 @@ var_dump ($str1 === $str2); //false (не тождественно)
 <br>
 <?php
 //Какая строка длиннее three - три
-$str1 = 'three';
-$str2 = 'три';
-var_dump($str1 >= $str2); //false
-var_dump($str2 >= $str1); //true (строка 'три' длиннее)
+$array = array('three','три',);
+usort($array, function ($a, $b) {
+    return mb_strlen($a) < mb_strlen($b);
+});
+echo reset($array); //three
 ?>
 <br>
 <?php
